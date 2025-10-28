@@ -1,0 +1,3 @@
+download the cosine_similarity pickle le from here to use in the project. Thankyou.
+Link:
+https://drive.google.com/file/d/13HuNCth6cbcLy3x-ECheCKpDPxx67IFR/view?usp=sharing
