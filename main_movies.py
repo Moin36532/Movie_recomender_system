@@ -10,6 +10,7 @@
 import gc
 import pickle
 import joblib
+import os
 import requests
 import pandas as pd
 import streamlit as st
@@ -34,7 +35,18 @@ gc.collect()
 movies_df = pd.read_csv("movies_df.csv")
 
 # Load precomputed cosine similarity matrix
-cosine_similarity = joblib.load("cosine_sim3.pkl")
+# cosine_similarity = joblib.load("cosine_sim3.pkl")
+# Load this pickle file using google drive link:
+
+file_id = "13HuNCth6cbcLy3x-ECheCKpDPxx67IFR"
+url = f"https://drive.google.com/uc?export=download&id={file_id}"
+
+if not os.path.exists("cosine_sim3.pkl"):
+    gdown.download(url, "cosine_sim3.pkl", quiet=False)
+
+with open("cosine_sim3.pkl", "rb") as f:
+    cosine_similarity = pickle.load(f)
+
 
 # Create a reverse lookup index (movie title → index)
 indices = pd.Series(movies_df.index, index=movies_df["title_x"]).drop_duplicates()
