@@ -48,3 +48,7 @@ Enhance the user interface
 git clone https://github.com/Moin36532/Movie_recomender_system.git
 pip install -r requirements.txt
 Enjoy!
+
+
+Check it live here:
+https://movie-recomender-system325.streamlit.app/
